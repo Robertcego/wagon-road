@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case GATHER: {
       return {
         ...state,
-        supplies: state.supplies + 15,
+        supplies: state.supplies + 20,
         days: state.days + 1,
       };
     }
@@ -36,7 +36,7 @@ export default function reducer(state = initialState, action) {
     case SELL: {
       return {
         ...state,
-        supplies: state.supplies ? state.supplies - 20 : 0,
+        supplies: state.supplies > 0 ? state.supplies - 20 : 0,
         cash: !state.supplies ? state.cash : state.cash + 5,
       };
     }
