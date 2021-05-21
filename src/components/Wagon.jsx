@@ -5,7 +5,7 @@ import WagonInteraction from "./WagonInteraction";
 //? Material ui Components
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
+// import Container from "@material-ui/core/Container";
 
 //!
 function Wagon({ supplies, distance, days, cash }) {

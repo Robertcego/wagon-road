@@ -19,30 +19,39 @@ import Container from "@material-ui/core/Container";
 //!
 
 function WagonInteraction(props) {
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState(props.days);
 
-  const onChange = (e) => setDay(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.dispatch({ type: TRAVEL, payload: day });
+    setDay("");
+  };
+
   //!
   return (
     <div>
       <Container>
-        <TextField
-          maxWidth="md"
-          type="text"
-          name="travel"
-          placeholder="Travel Days"
-          onChange={onChange}
-          autoComplete="false"
-        />
-        <Button
-          startIcon={<CardTravelIcon color="secondary" />}
-          variant="contained"
-          color="primary"
-          size="small"
-          onClick={() => props.dispatch({ type: TRAVEL, payload: day })}
-        >
-          Travel
-        </Button>
+        <form>
+          <TextField
+            maxWidth="md"
+            type="text"
+            name="travel"
+            placeholder="Travel Days"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
+            autoComplete="off"
+          />
+          <Button
+            startIcon={<CardTravelIcon color="secondary" />}
+            variant="contained"
+            color="primary"
+            size="small"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Travel
+          </Button>
+        </form>
       </Container>
       <br />
       <Grid>
@@ -76,14 +85,5 @@ function WagonInteraction(props) {
     </div>
   );
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     supplies: state.supplies,
-//     distance: state.distance,
-//     days: state.days,
-//     cash: state.cash,
-//   };
-// }
 
 export default connect(null, null)(WagonInteraction);
