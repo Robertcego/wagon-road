@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import WagonInteraction from './WagonInteraction';
 
@@ -9,6 +9,10 @@ import Grid from '@material-ui/core/Grid';
 
 //!
 function Wagon({ supplies, distance, days, cash }) {
+  useEffect(() => {
+    document.title = `Wagon Road | Current Supplies: ${supplies}`;
+  });
+
   return (
     <Box>
       <Grid>
