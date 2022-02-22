@@ -1,4 +1,4 @@
-import { GATHER, TRAVEL, TIPPEDWAGON, SELL, THEFT } from "../actions/names";
+import { GATHER, TRAVEL, TIPPEDWAGON, SELL, THEFT } from '../actions/names';
 
 const initialState = {
   supplies: 200,

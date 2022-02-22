@@ -1,4 +1,4 @@
-import { GATHER, TRAVEL, TIPPEDWAGON, SELL, THEFT } from "./names";
+import { GATHER, TRAVEL, TIPPEDWAGON, SELL, THEFT } from './names';
 
 export function gather() {
   return {
